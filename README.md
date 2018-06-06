@@ -1,9 +1,7 @@
-# PRO2MVCFramework
+# Donut
 
 ---
 
-Das aktuelle Git Repository.
-
-
+Antennatool to visualy learn about phased array antennas antenna plots.
 
 
