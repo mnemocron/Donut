@@ -9,6 +9,7 @@ import java.awt.Insets;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import pro2e.DonutFramework;
 import pro2e.TraceV1;
 import pro2e.userinterface.MyBorderFactory;
 
@@ -27,8 +28,8 @@ public class PanelPlotLegende extends JPanel {
 		lbGray.setForeground(Color.GRAY);
 		JLabel lbBlack = new JLabel("schwarz");
 		lbBlack.setForeground(Color.BLACK);
-		JLabel lbBlue = new JLabel("blau");
-		lbBlue.setForeground(Color.BLUE);
+		JLabel lbBlue = new JLabel("rot");
+		lbBlue.setForeground(DonutFramework.Colors.DonutPink);
 
 		add(lbGray, new GridBagConstraints(0, 0, 1, 1, 0.0, 0.0, GridBagConstraints.WEST, GridBagConstraints.HORIZONTAL,
 				new Insets(5, 5, 5, 5), 0, 0));

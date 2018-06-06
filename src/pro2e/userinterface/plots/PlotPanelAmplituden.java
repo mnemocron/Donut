@@ -20,6 +20,7 @@ import org.jfree.data.xy.XYSeries;
 import org.jfree.data.xy.XYSeriesCollection;
 
 import pro2e.DPIFixV3;
+import pro2e.DonutFramework;
 import pro2e.TraceV1;
 import pro2e.matlabfunctions.Fensterfunktionen;
 import pro2e.matlabfunctions.MiniMatlab;
@@ -62,7 +63,7 @@ public class PlotPanelAmplituden extends JPanel {
 
 		XYItemRenderer renderer = new StandardXYItemRenderer();
 		renderer.setSeriesStroke(0, new BasicStroke(3f, BasicStroke.CAP_BUTT, BasicStroke.JOIN_BEVEL));
-		renderer.setSeriesPaint(0, Color.BLUE);
+		renderer.setSeriesPaint(0, DonutFramework.Colors.DonutPink);
 		xyplot.setRenderer(0, renderer);
 
 		renderer = new StandardXYItemRenderer();

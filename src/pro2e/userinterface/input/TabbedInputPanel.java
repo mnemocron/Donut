@@ -1,5 +1,6 @@
 package pro2e.userinterface.input;
 
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.GridBagConstraints;
@@ -24,7 +25,7 @@ public class TabbedInputPanel extends JPanel {
 	private static final long serialVersionUID = 1L;
 	private TraceV1 trace = new TraceV1(this);
 
-	@SuppressWarnings("unused")
+	@SuppressWarnings("unused") // controller
 	private Controller controller;
 	private AntennaInputPanel antennaInputPanel;
 	private PhasedArrayInputPanel phasedInputPanel;
@@ -55,14 +56,10 @@ public class TabbedInputPanel extends JPanel {
 
 		panelAntennas.add(antennaInputPanel, new GridBagConstraints(0, 0, 1, 1, 1.0, 0.0, GridBagConstraints.NORTH,
 				GridBagConstraints.HORIZONTAL, new Insets(5, 5, 5, 5), 0, 0));
-
 		panelAntennas.add(phasedInputPanel, new GridBagConstraints(0, 1, 1, 1, 1.0, 0.0, GridBagConstraints.NORTH,
 				GridBagConstraints.HORIZONTAL, new Insets(5, 5, 5, 5), 0, 0));
-
 		panelAntennas.add(fillerA, new GridBagConstraints(0, 2, 1, 1, 1.0, 1.0, GridBagConstraints.SOUTH,
 				GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
-
-		/** TODO Sizing */
 		panelAntennas.add(kreisBild, new GridBagConstraints(0, 3, 1, 1, 0.0, 0.0, GridBagConstraints.SOUTH,
 				GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
 		kreisBild.setVisible(false);
@@ -70,7 +67,6 @@ public class TabbedInputPanel extends JPanel {
 
 		panelAdvanced.add(sidelobeInputPanel, new GridBagConstraints(0, 0, 1, 1, 1.0, 0.0, GridBagConstraints.NORTH,
 				GridBagConstraints.HORIZONTAL, new Insets(5, 5, 5, 5), 0, 0));
-
 		panelAdvanced.add(fillerB, new GridBagConstraints(0, 1, 1, 1, 1.0, 1.0, GridBagConstraints.NORTH,
 				GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
 
@@ -83,6 +79,7 @@ public class TabbedInputPanel extends JPanel {
 
 		tabpane.addTab("Antennen", panelAntennas);
 		tabpane.addTab("Nebenkeulen", panelAdvanced);
+		tabpane.setForeground(Color.WHITE);
 		add(tabpane);
 		setVisible(true);
 

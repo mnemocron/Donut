@@ -14,7 +14,7 @@ import javax.swing.UIManager;
 public class DPIFixV3 {
 	public static final Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
 	private static final int ifontSizeSwing = 17;
-	private static final float fScale = 0.75f;
+	private static final float fScale = 0.8f;
 	public static float fontFactor = fScale * screen.height / 1080;
 	private static Font fSwingFont = new Font("Sans-serif", Font.PLAIN, (int) (ifontSizeSwing * fontFactor));
 

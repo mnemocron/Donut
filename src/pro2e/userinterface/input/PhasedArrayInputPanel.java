@@ -39,21 +39,20 @@ public class PhasedArrayInputPanel extends JPanel
 	private JDoubleTextField tfPhaseDist = new JDoubleTextField("90", 1, false);
 	private JSlider sliderPhase = new JSlider(JSlider.HORIZONTAL, 0, 180, 90);
 	private JLabel lbPhase = new JLabel("Phase °");
+	private JPanel pnPhasedArray = new JPanel(new GridBagLayout());
 
 	public PhasedArrayInputPanel(Controller controller) {
 		super(new GridBagLayout());
 		trace.constructorCall();
 		this.controller = controller;
-		// setPreferredSize(new Dimension(DPIFixV3.screen.width / 4,
-		// DPIFixV3.screen.height / 2));
-		setBorder(MyBorderFactory.createMyBorder(" Phased Array "));
+		pnPhasedArray.setBorder(MyBorderFactory.createMyBorder(" Phased Array "));
 
-		add(new JLabel("Phase"), new GridBagConstraints(0, 0, 1, 1, 1.0, 0.0, GridBagConstraints.WEST,
+		pnPhasedArray.add(new JLabel("Phase"), new GridBagConstraints(0, 0, 1, 1, 1.0, 0.0, GridBagConstraints.WEST,
 				GridBagConstraints.NONE, new Insets(5, 5, 5, 5), 0, 0));
-		add(onPhase, new GridBagConstraints(1, 0, 1, 1, 0.0, 0.0, GridBagConstraints.WEST, GridBagConstraints.NONE,
-				new Insets(0, 0, 0, 0), 0, 0));
-		add(offPhase, new GridBagConstraints(1, 0, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.NONE,
-				new Insets(0, 0, 0, 0), 0, 0));
+		pnPhasedArray.add(onPhase, new GridBagConstraints(1, 0, 1, 1, 0.0, 0.0, GridBagConstraints.WEST,
+				GridBagConstraints.NONE, new Insets(0, 0, 0, 0), 0, 0));
+		pnPhasedArray.add(offPhase, new GridBagConstraints(1, 0, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER,
+				GridBagConstraints.NONE, new Insets(0, 0, 0, 0), 0, 0));
 
 		phaseOnOff = new ButtonGroup();
 		phaseOnOff.add(onPhase);
@@ -62,12 +61,12 @@ public class PhasedArrayInputPanel extends JPanel
 		onPhase.addItemListener(this);
 		offPhase.addItemListener(this);
 
-		add(lbPhase, new GridBagConstraints(0, 1, 1, 1, 1.0, 0.0, GridBagConstraints.WEST, GridBagConstraints.NONE,
-				new Insets(5, 5, 5, 5), 0, 0));
-		add(tfPhaseDist, new GridBagConstraints(1, 1, 1, 1, 1.0, 0.0, GridBagConstraints.EAST,
+		pnPhasedArray.add(lbPhase, new GridBagConstraints(0, 1, 1, 1, 1.0, 0.0, GridBagConstraints.WEST,
+				GridBagConstraints.NONE, new Insets(5, 5, 5, 5), 0, 0));
+		pnPhasedArray.add(tfPhaseDist, new GridBagConstraints(1, 1, 1, 1, 1.0, 0.0, GridBagConstraints.EAST,
 				GridBagConstraints.HORIZONTAL, new Insets(5, 5, 5, 5), 0, 0));
 
-		add(sliderPhase, new GridBagConstraints(0, 2, 3, 1, 1.0, 0.0, GridBagConstraints.CENTER,
+		pnPhasedArray.add(sliderPhase, new GridBagConstraints(0, 2, 3, 1, 1.0, 0.0, GridBagConstraints.CENTER,
 				GridBagConstraints.HORIZONTAL, new Insets(5, 5, 5, 5), 0, 0));
 		sliderPhase.setMajorTickSpacing(45);
 		sliderPhase.setMinorTickSpacing(5);
@@ -87,8 +86,9 @@ public class PhasedArrayInputPanel extends JPanel
 		offPhase.setToolTipText("Phase ausschalten");
 		sliderPhase.setToolTipText(tfPhaseDist.getToolTipText());
 
+		add(pnPhasedArray, new GridBagConstraints(0, 0, 1, 1, 1.0, 0.0, GridBagConstraints.WEST,
+				GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
 		setVisible(true);
-
 	}
 
 	/**

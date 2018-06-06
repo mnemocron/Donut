@@ -57,41 +57,44 @@ public class AntennaInputPanel extends JPanel implements ActionListener, ItemLis
 	private JLabel lbReflektor = new JLabel("Reflektor");
 	private JLabel lbPosition = new JLabel("Position");
 
+	private JPanel pnAntenna = new JPanel(new GridBagLayout());
+	private JPanel pnReflect = new JPanel(new GridBagLayout());
+
 	public AntennaInputPanel(Controller controller) {
 		super(new GridBagLayout());
 		trace.constructorCall();
 		this.controller = controller;
-		// setPreferredSize(new Dimension(DPIFixV3.screen.width / 4,
-		// DPIFixV3.screen.height / 2));
-		setBorder(MyBorderFactory.createMyBorder(" Antenne "));
 
-		add(lbGeometrie, new GridBagConstraints(0, 0, 1, 1, 1.0, 0.0, GridBagConstraints.WEST, GridBagConstraints.NONE,
-				new Insets(5, 5, 5, 5), 0, 0));
+		pnAntenna.setBorder(MyBorderFactory.createMyBorder(" Antenne "));
+		pnReflect.setBorder(MyBorderFactory.createMyBorder("Reflektor"));
 
-		add(selectGeometrie, new GridBagConstraints(1, 0, 1, 1, 1.0, 0.0, GridBagConstraints.EAST,
-				GridBagConstraints.HORIZONTAL, new Insets(5, 5, 5, 5), 0, 0));
-
-		add(lbAntAbstand, new GridBagConstraints(0, 1, 1, 1, 0.0, 0.0, GridBagConstraints.WEST, GridBagConstraints.NONE,
-				new Insets(5, 5, 5, 5), 0, 0));
-		add(tfDLam, new GridBagConstraints(1, 1, 1, 1, 0.0, 0.0, GridBagConstraints.EAST, GridBagConstraints.HORIZONTAL,
-				new Insets(5, 5, 5, 5), 0, 0));
-
-		add(lbNAnt, new GridBagConstraints(0, 2, 1, 1, 1.0, 0.0, GridBagConstraints.WEST, GridBagConstraints.NONE,
-				new Insets(5, 5, 5, 5), 0, 0));
-		add(tfNAnt, new GridBagConstraints(1, 2, 1, 1, 1.0, 0.0, GridBagConstraints.EAST, GridBagConstraints.HORIZONTAL,
-				new Insets(5, 5, 5, 5), 0, 0));
-
-		add(lbAusrichtung, new GridBagConstraints(0, 3, 1, 1, 1.0, 0.0, GridBagConstraints.WEST,
+		pnAntenna.add(lbGeometrie, new GridBagConstraints(0, 0, 1, 1, 1.0, 0.0, GridBagConstraints.WEST,
 				GridBagConstraints.NONE, new Insets(5, 5, 5, 5), 0, 0));
 
-		add(selectAntennaType, new GridBagConstraints(1, 3, 1, 1, 1.0, 0.0, GridBagConstraints.EAST,
+		pnAntenna.add(selectGeometrie, new GridBagConstraints(1, 0, 1, 1, 1.0, 0.0, GridBagConstraints.EAST,
 				GridBagConstraints.HORIZONTAL, new Insets(5, 5, 5, 5), 0, 0));
 
-		add(lbReflektor, new GridBagConstraints(0, 4, 1, 1, 1.0, 0.0, GridBagConstraints.WEST, GridBagConstraints.NONE,
-				new Insets(5, 5, 5, 5), 0, 0));
-		add(onReflektor, new GridBagConstraints(1, 4, 1, 1, 0.0, 0.0, GridBagConstraints.WEST, GridBagConstraints.NONE,
-				new Insets(0, 0, 0, 0), 0, 0));
-		add(offReflektor, new GridBagConstraints(1, 4, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER,
+		pnAntenna.add(lbAntAbstand, new GridBagConstraints(0, 1, 1, 1, 0.0, 0.0, GridBagConstraints.WEST,
+				GridBagConstraints.NONE, new Insets(5, 5, 5, 5), 0, 0));
+		pnAntenna.add(tfDLam, new GridBagConstraints(1, 1, 1, 1, 0.0, 0.0, GridBagConstraints.EAST,
+				GridBagConstraints.HORIZONTAL, new Insets(5, 5, 5, 5), 0, 0));
+
+		pnAntenna.add(lbNAnt, new GridBagConstraints(0, 2, 1, 1, 1.0, 0.0, GridBagConstraints.WEST,
+				GridBagConstraints.NONE, new Insets(5, 5, 5, 5), 0, 0));
+		pnAntenna.add(tfNAnt, new GridBagConstraints(1, 2, 1, 1, 1.0, 0.0, GridBagConstraints.EAST,
+				GridBagConstraints.HORIZONTAL, new Insets(5, 5, 5, 5), 0, 0));
+
+		pnAntenna.add(lbAusrichtung, new GridBagConstraints(0, 3, 1, 1, 1.0, 0.0, GridBagConstraints.WEST,
+				GridBagConstraints.NONE, new Insets(5, 5, 5, 5), 0, 0));
+
+		pnAntenna.add(selectAntennaType, new GridBagConstraints(1, 3, 1, 1, 1.0, 0.0, GridBagConstraints.EAST,
+				GridBagConstraints.HORIZONTAL, new Insets(5, 5, 5, 5), 0, 0));
+
+		pnReflect.add(lbReflektor, new GridBagConstraints(0, 5, 1, 1, 1.0, 0.0, GridBagConstraints.WEST,
+				GridBagConstraints.NONE, new Insets(5, 5, 5, 5), 0, 0));
+		pnReflect.add(onReflektor, new GridBagConstraints(1, 5, 1, 1, 0.0, 0.0, GridBagConstraints.WEST,
+				GridBagConstraints.NONE, new Insets(0, 0, 0, 0), 0, 0));
+		pnReflect.add(offReflektor, new GridBagConstraints(1, 5, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER,
 				GridBagConstraints.NONE, new Insets(0, 0, 0, 0), 0, 0));
 
 		reflektorOnOff = new ButtonGroup();
@@ -101,15 +104,15 @@ public class AntennaInputPanel extends JPanel implements ActionListener, ItemLis
 		onReflektor.addItemListener(this);
 		offReflektor.addItemListener(this);
 
-		add(lbPosition, new GridBagConstraints(0, 5, 1, 1, 1.0, 0.0, GridBagConstraints.WEST, GridBagConstraints.NONE,
-				new Insets(5, 5, 5, 5), 0, 0));
-		add(selectReflektorPos, new GridBagConstraints(1, 5, 2, 1, 1.0, 0.0, GridBagConstraints.WEST,
+		pnReflect.add(lbPosition, new GridBagConstraints(0, 6, 1, 1, 1.0, 0.0, GridBagConstraints.WEST,
+				GridBagConstraints.NONE, new Insets(5, 5, 5, 5), 0, 0));
+		pnReflect.add(selectReflektorPos, new GridBagConstraints(1, 6, 2, 1, 1.0, 0.0, GridBagConstraints.WEST,
 				GridBagConstraints.HORIZONTAL, new Insets(5, 5, 5, 5), 0, 0));
 		selectReflektorPos.setEnabled(false);
 
-		add(lbRefAbstand, new GridBagConstraints(0, 6, 1, 1, 1.0, 0.0, GridBagConstraints.WEST, GridBagConstraints.NONE,
-				new Insets(5, 5, 5, 5), 0, 0));
-		add(tfReflDist, new GridBagConstraints(1, 6, 1, 1, 1.0, 0.0, GridBagConstraints.EAST,
+		pnReflect.add(lbRefAbstand, new GridBagConstraints(0, 7, 1, 1, 1.0, 0.0, GridBagConstraints.WEST,
+				GridBagConstraints.NONE, new Insets(5, 5, 5, 5), 0, 0));
+		pnReflect.add(tfReflDist, new GridBagConstraints(1, 7, 1, 1, 1.0, 0.0, GridBagConstraints.EAST,
 				GridBagConstraints.HORIZONTAL, new Insets(5, 5, 5, 5), 0, 0));
 		tfReflDist.setEditable(false);
 
@@ -139,6 +142,11 @@ public class AntennaInputPanel extends JPanel implements ActionListener, ItemLis
 		lbAusrichtung.setToolTipText(selectAntennaType.getToolTipText());
 		lbPosition.setToolTipText(selectReflektorPos.getToolTipText());
 		lbGeometrie.setToolTipText(selectGeometrie.getToolTipText());
+
+		add(pnAntenna, new GridBagConstraints(0, 0, 1, 1, 1.0, 0.0, GridBagConstraints.WEST, GridBagConstraints.BOTH,
+				new Insets(5, 5, 5, 5), 0, 0));
+		add(pnReflect, new GridBagConstraints(0, 1, 1, 1, 1.0, 0.0, GridBagConstraints.WEST, GridBagConstraints.BOTH,
+				new Insets(5, 5, 5, 5), 0, 0));
 
 		setVisible(true);
 
@@ -231,17 +239,8 @@ public class AntennaInputPanel extends JPanel implements ActionListener, ItemLis
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		trace.methodeCall();
-		Object source = e.getSource();
 		controller.setAntennaType(getSelectedAntenna());
-		if (source == selectReflektorPos) {
-			valuesToController();
-		}
-		if (source == tfReflDist) {
-			valuesToController();
-		}
-		if (source == selectGeometrie) {
-			valuesToController();
-		}
+		valuesToController();
 	}
 
 	/**

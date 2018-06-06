@@ -1,5 +1,6 @@
 package pro2e.userinterface;
 
+import java.awt.Color;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
@@ -11,7 +12,9 @@ import java.util.Observer;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.UIManager;
 
+import pro2e.DonutFramework;
 import pro2e.controller.Controller;
 import pro2e.userinterface.input.TabbedInputPanel;
 import pro2e.userinterface.plots.AntennaPicturePanel;
@@ -41,6 +44,9 @@ public class TopView extends JPanel implements Observer, ActionListener {
 		this.controller = controller;
 		inputPanel = new TabbedInputPanel(this.controller);
 		// setBorder(MyBorderFactory.createMyBorder(" Antennentool "));
+
+		UIManager.put("TabbedPane.selected", DonutFramework.Colors.DonutPink);
+		UIManager.put("TabbedPane.background", Color.LIGHT_GRAY);
 
 		containerInput.add(inputPanel, new GridBagConstraints(0, 0, 1, 1, 1.0, 1.0, GridBagConstraints.CENTER,
 				GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));

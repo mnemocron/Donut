@@ -1,5 +1,6 @@
 package pro2e.userinterface;
 
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
@@ -13,6 +14,7 @@ import java.util.Observer;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JCheckBoxMenuItem;
+import javax.swing.JComponent;
 import javax.swing.JDialog;
 import javax.swing.JLabel;
 import javax.swing.JMenu;
@@ -27,10 +29,9 @@ public class MenuBar extends JMenuBar implements Observer, ActionListener {
 
 	private static final long serialVersionUID = 1L;
 
-	JMenu menu, tutorialMenu, hilfe;
-	JMenuItem menuItemOnTop, submenuItem, rotItem, gruenItem, gelbItem, blauItem;
+	JMenu tutorialMenu, help;
 	JMenuItem showTutorial = new JMenuItem("Tutorial anzeigen");
-	JMenuItem showAbout = new JMenuItem("Über");
+	JMenuItem showAbout = new JMenuItem("About");
 	JCheckBoxMenuItem checkTutorialStartup = new JCheckBoxMenuItem("beim aufstarten anzeigen");
 
 	DonutFramework frame;
@@ -39,10 +40,8 @@ public class MenuBar extends JMenuBar implements Observer, ActionListener {
 	public MenuBar(Controller controller, DonutFramework frame) {
 		this.frame = frame;
 		this.controller = controller;
-		menu = new JMenu("Datei");
-		hilfe = new JMenu("Hilfe");
-		menu.setMnemonic(KeyEvent.VK_D);
-		hilfe.setMnemonic(KeyEvent.VK_H);
+		help = new JMenu("Hilfe");
+		help.setMnemonic(KeyEvent.VK_H);
 
 		// menu.addSeparator();
 		tutorialMenu = new JMenu("Tutorial");
@@ -50,18 +49,24 @@ public class MenuBar extends JMenuBar implements Observer, ActionListener {
 		tutorialMenu.add(showTutorial);
 		tutorialMenu.add(checkTutorialStartup);
 		checkTutorialStartup.setSelected(frame.getShowOnStartup());
-		hilfe.add(tutorialMenu);
-		hilfe.add(showAbout);
+		help.add(tutorialMenu);
+		help.add(showAbout);
 		showAbout.addActionListener(this);
 
 		showTutorial.addActionListener(this);
 		checkTutorialStartup.addActionListener(this);
 
-		// add(menu);
-		add(hilfe);
+		applyTheme(this);
+
+		add(help);
 	}
 
 	public void update(Observable o, Object obj) {
+	}
+
+	private void applyTheme(JComponent that) {
+		that.setBackground(DonutFramework.Colors.DonutBeige);
+		that.setForeground(Color.DARK_GRAY);
 	}
 
 	public void actionPerformed(ActionEvent e) {
@@ -83,7 +88,7 @@ public class MenuBar extends JMenuBar implements Observer, ActionListener {
 					new JLabel(), "(c) 2018 - Fachhochschule Nordwestschweiz" };
 			JOptionPane aboutDialog = new JOptionPane(message, JOptionPane.PLAIN_MESSAGE);
 
-			JDialog dialog = aboutDialog.createDialog(null, "Tutorial");
+			JDialog dialog = aboutDialog.createDialog(null, "About");
 			Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 			dialog.setLocation(screenSize.width / 3, screenSize.height / 3);
 			// dialog.setSize(screenSize.width / 3, screenSize.height / 3);

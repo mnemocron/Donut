@@ -38,6 +38,8 @@ public class TabbedPlotPanel extends JPanel {
 		tabpane.addTab("kartesisch", plotPanelKart);
 		tabpane.addTab("polar", plotPanelPol);
 
+		tabpane.setForeground(Color.WHITE);
+
 		add(tabpane);
 		setVisible(true);
 

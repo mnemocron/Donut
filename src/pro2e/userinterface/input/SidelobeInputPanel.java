@@ -250,10 +250,11 @@ public class SidelobeInputPanel extends JPanel
 	}
 
 	private void visibilityHandler() {
+		int window = getSelectedWindow();
 		if (offQuantize.isSelected()) {
 			selectBitrate.setEnabled(false);
 		} else {
-			selectBitrate.setEnabled(true);
+			selectBitrate.setEnabled(window != Fensterfunktionen.RECTANGULAR);
 		}
 		if (offSidelobe.isSelected()) {
 			selectWindow.setEnabled(false);
@@ -265,11 +266,10 @@ public class SidelobeInputPanel extends JPanel
 			tfCosAtten.setEditable(false);
 			lbChebyAtten.setEnabled(false);
 			lbCosAtten.setEnabled(false);
-			selectBitrate.setEnabled(false);
 		} else {
 			selectWindow.setEnabled(true);
-			offQuantize.setEnabled(true);
-			onQuantize.setEnabled(true);
+			offQuantize.setEnabled(window != Fensterfunktionen.RECTANGULAR); // bei Rechteck disabled, weil unsinnig
+			onQuantize.setEnabled(window != Fensterfunktionen.RECTANGULAR);
 			sliderCheby.setEnabled(true);
 			sliderCosin.setEnabled(true);
 			tfChebyAtten.setEnabled(true);
@@ -277,7 +277,6 @@ public class SidelobeInputPanel extends JPanel
 			lbChebyAtten.setEnabled(true);
 			lbCosAtten.setEnabled(true);
 		}
-		int window = getSelectedWindow();
 		if (window == Fensterfunktionen.CHEBYSHEV || window == Fensterfunktionen.EXPONENTIAL) {
 			lbChebyAtten.setVisible(true);
 			tfChebyAtten.setVisible(true);

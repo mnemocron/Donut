@@ -22,6 +22,7 @@ import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebHistory;
 import javafx.scene.web.WebView;
 import javafx.stage.Stage;
+import pro2e.DPIFixV3;
 import pro2e.userinterface.Utility;
 
 import javax.swing.JButton;
@@ -53,7 +54,7 @@ public class SwingFXWebView extends JPanel {
 				final JFrame frame = new JFrame();
 
 				frame.getContentPane().add(new SwingFXWebView());
-				frame.setMinimumSize(new Dimension(640, 480));
+				frame.setMinimumSize(new Dimension(DPIFixV3.screen.width / 2, DPIFixV3.screen.height / 5 * 4));
 				frame.setVisible(true);
 			}
 		});

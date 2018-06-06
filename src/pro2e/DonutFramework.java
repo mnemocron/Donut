@@ -1,6 +1,7 @@
 package pro2e;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.awt.image.BufferedImage;
@@ -37,6 +38,12 @@ public class DonutFramework extends JFrame {
 	private Controller controller = new Controller(model, this);
 	private TopView view = new TopView(controller);
 	private MenuBar menuBar = new MenuBar(controller, this);
+	
+	public static class Colors {
+		public static final Color DonutPink = new Color(0xFF4085);
+		public static final Color DonutBeige = new Color(0xFFD170);
+	}
+	
 	// private StatusBar statusBar = new StatusBar();
 
 	public void init() {
