@@ -63,7 +63,7 @@ public class PlotPanelAmplituden extends JPanel {
 
 		XYItemRenderer renderer = new StandardXYItemRenderer();
 		renderer.setSeriesStroke(0, new BasicStroke(3f, BasicStroke.CAP_BUTT, BasicStroke.JOIN_BEVEL));
-		renderer.setSeriesPaint(0, DonutFramework.Colors.DonutPink);
+		renderer.setSeriesPaint(0, DonutFramework.Colors.Pink);
 		xyplot.setRenderer(0, renderer);
 
 		renderer = new StandardXYItemRenderer();
@@ -80,7 +80,9 @@ public class PlotPanelAmplituden extends JPanel {
 	}
 
 	/**
-	 * @brief setzt die Darstellung (zoom) auf den Ursprungszustand zurück
+	 * <pre>
+	 * setzt die Darstellung (zoom) auf den Ursprungszustand zurück
+ 	 * </pre>
 	 */
 	public void resetAxis() {
 		trace.methodeCall();
@@ -95,7 +97,9 @@ public class PlotPanelAmplituden extends JPanel {
 	}
 
 	/**
-	 * @brief setzt die Daten für 3 Plots y = f(x)
+	 * <pre>
+	 * setzt die Daten für 3 Plots y = f(x)
+ 	 * </pre>
 	 * @param x
 	 * @param y1
 	 * @param y2
@@ -132,9 +136,10 @@ public class PlotPanelAmplituden extends JPanel {
 	}
 
 	/**
-	 * @brief holt die Daten aus dem Model und generiert 3 verschiedene Kurven
-	 * @details (Funktion, Funkion mit n-Antennen, Diskretisierte Funktion mit
-	 *          n-Antennen)
+	 * <pre>
+	 * holt die Daten aus dem Model und generiert 3 verschiedene Kurven
+	 * (Funktion, Funkion mit n-Antennen, Diskretisierte Funktion mit n-Antennen)
+ 	 * </pre>
 	 * @param obs
 	 * @param obj
 	 */

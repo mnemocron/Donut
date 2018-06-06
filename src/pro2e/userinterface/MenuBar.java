@@ -1,6 +1,5 @@
 package pro2e.userinterface;
 
-import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
@@ -14,7 +13,6 @@ import java.util.Observer;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JCheckBoxMenuItem;
-import javax.swing.JComponent;
 import javax.swing.JDialog;
 import javax.swing.JLabel;
 import javax.swing.JMenu;
@@ -56,17 +54,10 @@ public class MenuBar extends JMenuBar implements Observer, ActionListener {
 		showTutorial.addActionListener(this);
 		checkTutorialStartup.addActionListener(this);
 
-		applyTheme(this);
-
 		add(help);
 	}
 
 	public void update(Observable o, Object obj) {
-	}
-
-	private void applyTheme(JComponent that) {
-		that.setBackground(DonutFramework.Colors.DonutBeige);
-		that.setForeground(Color.DARK_GRAY);
 	}
 
 	public void actionPerformed(ActionEvent e) {
@@ -76,7 +67,6 @@ public class MenuBar extends JMenuBar implements Observer, ActionListener {
 			try {
 				logo = ImageIO.read(DonutFramework.class.getResourceAsStream("Icon.png"));
 			} catch (IOException e1) {
-				// TODO Auto-generated catch block
 				e1.printStackTrace();
 			}
 
@@ -91,7 +81,6 @@ public class MenuBar extends JMenuBar implements Observer, ActionListener {
 			JDialog dialog = aboutDialog.createDialog(null, "About");
 			Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 			dialog.setLocation(screenSize.width / 3, screenSize.height / 3);
-			// dialog.setSize(screenSize.width / 3, screenSize.height / 3);
 			dialog.setVisible(true);
 		}
 		if (source == showTutorial) {

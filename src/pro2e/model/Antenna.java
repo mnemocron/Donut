@@ -36,8 +36,9 @@ public class Antenna {
 	}
 
 	/**
-	 * @brief gibt ein Array mit der Amplitude in Abhängigkeit des Winkels aus (von
-	 *        0 bis 360°)
+	 * <pre>
+	 * gibt ein Array mit der Amplitude in Abhängigkeit des Winkels aus (von 0 bis 360°)
+ 	 * </pre>
 	 * @param N
 	 * @return
 	 */

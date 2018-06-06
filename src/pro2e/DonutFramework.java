@@ -19,7 +19,6 @@ import javax.swing.SwingUtilities;
 import pro2e.controller.Controller;
 import pro2e.model.Model;
 import pro2e.userinterface.MenuBar;
-//import pro2e.userinterface.StatusBar;
 import pro2e.userinterface.TopView;
 import pro2e.userinterface.tutorial.SwingFXWebView;
 
@@ -38,22 +37,21 @@ public class DonutFramework extends JFrame {
 	private Controller controller = new Controller(model, this);
 	private TopView view = new TopView(controller);
 	private MenuBar menuBar = new MenuBar(controller, this);
-	
+
 	public static class Colors {
-		public static final Color DonutPink = new Color(0xFF4085);
-		public static final Color DonutBeige = new Color(0xFFD170);
+		public static final Color Pink = new Color(0xFF4085);
+		public static final Color Beige = new Color(0xFFD170);
+		public static final Color Blue = new Color(0x63B6E6);
+		public static final Color Green = new Color(0x84E060);
+		public static final Color Purple = new Color(0x9729CC);
 	}
-	
-	// private StatusBar statusBar = new StatusBar();
 
 	public void init() {
 		model.addObserver(view);
 		System.out.println("view @" + view.hashCode());
 		model.addObserver(menuBar);
 		getContentPane().setLayout(new BorderLayout());
-		// getContentPane().add(toolBar, BorderLayout.PAGE_START);
 		getContentPane().add(view, BorderLayout.CENTER);
-		// getContentPane().add(statusBar, BorderLayout.SOUTH);
 		setJMenuBar(menuBar);
 
 		DPIFixV3.scaleSwingFonts();
@@ -96,8 +94,11 @@ public class DonutFramework extends JFrame {
 	}
 
 	/**
-	 * @brief speichert den Wert, ob das Tutorial beim Programmstart angezeigt
-	 *        werden soll im System ab
+	 * <pre>
+	 * speichert den Wert, ob das Tutorial beim Programmstart angezeigt
+	 * werden soll im System ab
+	 * </pre>
+	 * 
 	 * @param value
 	 */
 	public void setShowOnStartup(boolean value) {
@@ -106,8 +107,11 @@ public class DonutFramework extends JFrame {
 	}
 
 	/**
-	 * @brief gibt den im System gespeicherten Wert zurück, ob das Tutorial beim
-	 *        Programmstart angezeigt werden soll
+	 * <pre>
+	 * gibt den im System gespeicherten Wert zurück, ob das Tutorial beim
+	 * Programmstart angezeigt werden soll
+	 * </pre>
+	 * 
 	 * @return
 	 */
 	public boolean getShowOnStartup() {
@@ -116,7 +120,9 @@ public class DonutFramework extends JFrame {
 	}
 
 	/**
-	 * @brief öffnet das Tutorial frame
+	 * <pre>
+	 * öffnet das Tutorial frame
+	 * </pre>
 	 */
 	public void showTutorial() {
 		JFrame tutorial = new JFrame();
@@ -127,8 +133,8 @@ public class DonutFramework extends JFrame {
 			e.printStackTrace();
 		}
 		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-		tutorial.setSize(screenSize.width / 3, screenSize.height / 3);
-		tutorial.setLocation((screenSize.width) / 4, (screenSize.height) / 4);
+		tutorial.setSize(screenSize.width / 2, screenSize.height / 5 * 4);
+		tutorial.setLocation((screenSize.width) / 4, (screenSize.height) / 7);
 		tutorial.setMinimumSize(new Dimension(screenSize.width / 5, screenSize.height / 5));
 
 		SwingFXWebView tutorialWindow = new SwingFXWebView();
@@ -180,7 +186,7 @@ public class DonutFramework extends JFrame {
 					JDialog dialog = startupDialog.createDialog(null, "Tutorial");
 					width /= 3;
 					height /= 3;
-					dialog.setLocation(width / 3, height / 3);
+					dialog.setLocation(screenSize.width / 3, screenSize.height / 3);
 					if (dialog.getHeight() > height)
 						height = dialog.getHeight();
 					if (dialog.getWidth() > width)

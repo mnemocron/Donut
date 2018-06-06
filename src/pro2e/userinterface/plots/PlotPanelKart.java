@@ -20,6 +20,7 @@ import org.jfree.chart.renderer.xy.XYItemRenderer;
 import org.jfree.data.xy.XYSeries;
 import org.jfree.data.xy.XYSeriesCollection;
 
+import pro2e.DonutFramework;
 import pro2e.TraceV1;
 import pro2e.matlabfunctions.MiniMatlab;
 import pro2e.model.Model;
@@ -33,38 +34,32 @@ public class PlotPanelKart extends JPanel {
 	public PlotPanelKart() {
 		super(new GridBagLayout());
 		trace.constructorCall();
-		// setPreferredSize(new Dimension(DPIFixV3.screen.width / 3,
-		// DPIFixV3.screen.height / 2));
 
 		// Farben und Settings
 		chart.setBackgroundPaint(getBackground());
 		XYPlot xyplot = chart.getXYPlot();
-		// xyplot.setBackgroundPaint(getBackground());
 
 		ValueAxis xAxis = xyplot.getDomainAxis(0);
 		xAxis.setRange(0.0, 360);
 		xAxis.setAutoRange(false);
 		xAxis.setTickLabelsVisible(true);
-		// xAxis.setInverted(true);
-		/** @TODO invert Axis */
 
 		ValueAxis yAxis = xyplot.getRangeAxis(0);
 		yAxis.setRange(-60.0, 0.0);
 		yAxis.setAutoRange(false);
 		yAxis.setTickLabelsVisible(true);
 
-		/** @IMPORTANT MUSS VOR setRenderer AUFGERUFEN WERDEN ! */
+		/** IMPORTANT MUSS VOR setRenderer AUFGERUFEN WERDEN ! */
 		JFreeChartDPIFix.applyChartTheme(chart);
 
 		xyplot.setBackgroundPaint(Color.WHITE);
 		xyplot.setDomainGridlinePaint(Color.GRAY);
 		xyplot.setRangeGridlinePaint(Color.GRAY);
 		chart.setBackgroundPaint(Color.WHITE);
-		// chart.setBackgroundPaint(this.getBackground());
 
 		XYItemRenderer renderer = new StandardXYItemRenderer();
-		renderer.setSeriesStroke(0, new BasicStroke(2f, BasicStroke.CAP_BUTT, BasicStroke.JOIN_BEVEL));
-		renderer.setSeriesPaint(0, Color.darkGray);
+		renderer.setSeriesStroke(0, new BasicStroke(3f, BasicStroke.CAP_BUTT, BasicStroke.JOIN_BEVEL));
+		renderer.setSeriesPaint(0, DonutFramework.Colors.Blue);
 		xyplot.setRenderer(0, renderer);
 
 		renderer = new StandardXYItemRenderer();
@@ -77,7 +72,9 @@ public class PlotPanelKart extends JPanel {
 	}
 
 	/**
-	 * @brief setzt die Darstellung (zoom) auf den Ursprungszustand zurück
+	 * <pre>
+	 * setzt die Darstellung (zoom) auf den Ursprungszustand zurück
+	 * </pre>
 	 */
 	public void resetAxis(boolean plotScaleDb) {
 		trace.methodeCall();
@@ -98,7 +95,10 @@ public class PlotPanelKart extends JPanel {
 	}
 
 	/**
-	 * @brief setzt die Daten für den Plot y1 = f(x)
+	 * <pre>
+	 * setzt die Daten für den Plot y1 = f(x)
+	 * </pre>
+	 * 
 	 * @param x
 	 * @param y1
 	 */
@@ -125,7 +125,10 @@ public class PlotPanelKart extends JPanel {
 	}
 
 	/**
-	 * @brief holt die Daten aus dem Model und setzt sie in den Plot
+	 * <pre>
+	 * holt die Daten aus dem Model und setzt sie in den Plot
+	 * </pre>
+	 * 
 	 * @param obs
 	 * @param obj
 	 */

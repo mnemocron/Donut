@@ -3,15 +3,22 @@ package pro2e.matlabfunctions;
 import java.math.BigDecimal;
 
 /**
- * @brief Klasse mit statischen Methoden zur Berechnung von Fensterfunktionen
+ * <pre>
+ * Klasse mit statischen Methoden zur Berechnung von Fensterfunktionen
+ * </pre>
+ * 
  * @author simon
- * @see https://en.wikipedia.org/wiki/Window_function
- * @see http://practicalcryptography.com/miscellaneous/machine-learning/implementing-dolph-chebyshev-window/
- *
+ * 
+ *         <pre>
+ * see https://en.wikipedia.org/wiki/Window_function
+ * http://practicalcryptography.com/miscellaneous/machine-learning/implementing-dolph-chebyshev-window/
+ *         </pre>
  */
 public class Fensterfunktionen {
 	/**
-	 * @brief enumerations for the different window functions
+	 * <pre>
+	 * enumerations for the different window functions
+	 * </pre>
 	 */
 	public static final int RECTANGULAR = 0;
 	public static final int CHEBYSHEV = 1;
@@ -28,7 +35,9 @@ public class Fensterfunktionen {
 	public static final int EXPONENTIAL = 12;
 
 	/**
-	 * @brief enumerations for the rounding function
+	 * <pre>
+	 * enumerations for the rounding function
+	 * </pre>
 	 */
 	public static final int ROUND_FLOOR = 0;
 	public static final int ROUND_CEIL = 1;
@@ -40,7 +49,10 @@ public class Fensterfunktionen {
 	// };
 
 	/**
-	 * @brief Quantisierungsfunktion nach Binärwerten - Methode: Floor / abrunden
+	 * <pre>
+	 * Quantisierungsfunktion nach Binärwerten - Methode: Floor / abrunden
+	 * </pre>
+	 * 
 	 * @param val
 	 *            array of normalized values (range: 0-1)
 	 * @param bits
@@ -57,7 +69,10 @@ public class Fensterfunktionen {
 	}
 
 	/**
-	 * @brief Quantisierungsfunktion nach Binärwerten - Methode: Ceil / aufrunden
+	 * <pre>
+	 * Quantisierungsfunktion nach Binärwerten - Methode: Ceil / aufrunden
+	 * </pre>
+	 * 
 	 * @param val
 	 * @param bits
 	 * @return
@@ -73,6 +88,9 @@ public class Fensterfunktionen {
 	}
 
 	/**
+	 * <pre>
+	 * diskretisiert einen double Wert auf einen binären Zahlenbereich
+	 * </pre>
 	 * 
 	 * @param val
 	 * @param bits
@@ -96,7 +114,7 @@ public class Fensterfunktionen {
 			}
 		}
 		if (method == ROUND_NEAREST) {
-			double stepn = 1.0 / (resolution-1);
+			double stepn = 1.0 / (resolution - 1);
 			for (int round = 0; round < resolution; round++) {
 				if (Math.abs(val - (round * stepn)) <= (stepn / 2)) {
 					ret = stepn * round;
@@ -107,7 +125,10 @@ public class Fensterfunktionen {
 	}
 
 	/**
-	 * @brief Rechteckfenster / entspricht dem Matlab-Befehl ones(1, N)
+	 * <pre>
+	 * Rechteckfenster / entspricht dem Matlab-Befehl ones(1, N)
+	 * </pre>
+	 * 
 	 * @param N
 	 * @return
 	 */
@@ -120,7 +141,10 @@ public class Fensterfunktionen {
 	}
 
 	/**
-	 * @brief Dreiecksfenster (ohne Anheben)
+	 * <pre>
+	 * Dreiecksfenster (ohne Anheben)
+	 * </pre>
+	 * 
 	 * @param N
 	 * @return
 	 */
@@ -143,7 +167,10 @@ public class Fensterfunktionen {
 	}
 
 	/**
-	 * @brief Exponentialfunktion mit anpassbarer Steigung
+	 * <pre>
+	 * Exponentialfunktion mit anpassbarer Steigung
+	 * </pre>
+	 * 
 	 * @param N
 	 * @param steigung
 	 * @return
@@ -158,14 +185,12 @@ public class Fensterfunktionen {
 	}
 
 	/**
-	 * @brief Binominal-Fenster
-	 * @details Das Binomial-Fenster unterdrückt sämtliche Nebenkeulen in einer
-	 *          Arrayantennen-Anwendung
-	 * @note Dependency: MiniMatlab Funktion
-	 * 
-	 *       <pre>
-	 * BigDecimal factorial(int num)
-	 *       </pre>
+	 * <pre>
+	 * Binominal-Fenster
+	 * Das Binomial-Fenster unterdrückt sämtliche Nebenkeulen in einer
+	 * Arrayantennen-Anwendung
+	 * Dependency: MiniMatlab BigDecimal factorial(int num)
+	 * </pre>
 	 * 
 	 * @param N
 	 * @return
@@ -195,7 +220,9 @@ public class Fensterfunktionen {
 	}
 
 	/**
+	 * <pre>
 	 * This function computes the chebyshev polyomial T_n(x)
+	 * </pre>
 	 * 
 	 * @param n
 	 * @param x
@@ -212,15 +239,18 @@ public class Fensterfunktionen {
 	}
 
 	/**
-	 * @brief Dolph Chebyshev Fenster - entspricht dem Matlab commad chebwin()
-	 *        chebwin(N,R) returns the N-point Chebyshev window with R decibels of
-	 *        relative sidelobe attenuation.
-	 * @param N
+	 * <pre>
+	 * Dolph Chebyshev Fenster - entspricht dem Matlab commad chebwin()
+	 * chebwin(N,R) returns the N-point Chebyshev window with R decibels of
+	 * relative sidelobe attenuation.
+	 * http://practicalcryptography.com/miscellaneous/machine-learning/implementing-dolph-chebyshev-window/
+	 * </pre>
+	 * 
+	 * @param size
 	 *            size of output array
 	 * @param atten
 	 *            attenuation
 	 * @return
-	 * @see http://practicalcryptography.com/miscellaneous/machine-learning/implementing-dolph-chebyshev-window/
 	 */
 	public static double[] Chebwin(int size, double atten) {
 		double[] out = new double[size];
@@ -248,8 +278,11 @@ public class Fensterfunktionen {
 	}
 
 	/**
-	 * @brief Cosinusfenster (anhebbar)
-	 * @param N
+	 * <pre>
+	 * Cosinusfenster(anhebbar)
+	 * </pre>
+	 * 
+	 * @param size
 	 * @param x
 	 * @return
 	 */
@@ -270,8 +303,10 @@ public class Fensterfunktionen {
 	}
 
 	/**
-	 * @brief von Hann Fenster
-	 * @note Tested: working
+	 * <pre>
+	 * von Hann Fenster
+	 * </pre>
+	 * 
 	 * @param size
 	 * @return
 	 */
@@ -284,8 +319,10 @@ public class Fensterfunktionen {
 	}
 
 	/**
-	 * @brief Hanning Fenster
-	 * @note Tested: working
+	 * <pre>
+	 * Hanning Fenster
+	 * </pre>
+	 * 
 	 * @param size
 	 * @return
 	 */
@@ -298,8 +335,10 @@ public class Fensterfunktionen {
 	}
 
 	/**
-	 * @brief Blackman Fenster
-	 * @note Tested: working
+	 * <pre>
+	 * Blackman Fenster
+	 * </pre>
+	 * 
 	 * @param size
 	 * @return
 	 */
@@ -314,8 +353,10 @@ public class Fensterfunktionen {
 	}
 
 	/**
-	 * @brief Welch Fenster
-	 * @note Tested: working
+	 * <pre>
+	 * Welch Fenster
+	 * </pre>
+	 * 
 	 * @param size
 	 * @return
 	 */
@@ -328,8 +369,10 @@ public class Fensterfunktionen {
 	}
 
 	/**
-	 * @brief Bartlett Hann Fenster
-	 * @note Tested: working
+	 * <pre>
+	 * Bartlett Hann Fenster
+	 * </pre>
+	 * 
 	 * @param size
 	 * @return
 	 */

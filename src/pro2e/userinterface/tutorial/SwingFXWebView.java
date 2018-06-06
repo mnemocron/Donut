@@ -31,7 +31,10 @@ import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 
 /**
- * @see https://gist.github.com/a1o1/1877012
+ * <pre>
+ * https://gist.github.com/a1o1/1877012
+ * </pre>
+ * 
  * @author a1o1
  */
 public class SwingFXWebView extends JPanel {

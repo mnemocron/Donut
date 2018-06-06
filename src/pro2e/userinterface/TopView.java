@@ -45,8 +45,15 @@ public class TopView extends JPanel implements Observer, ActionListener {
 		inputPanel = new TabbedInputPanel(this.controller);
 		// setBorder(MyBorderFactory.createMyBorder(" Antennentool "));
 
-		UIManager.put("TabbedPane.selected", DonutFramework.Colors.DonutPink);
+		UIManager.put("TabbedPane.selected", DonutFramework.Colors.Pink);
 		UIManager.put("TabbedPane.background", Color.LIGHT_GRAY);
+		UIManager.put("TabbedPane.foreground", Color.WHITE);
+		UIManager.put("Button.background", DonutFramework.Colors.Blue);
+		UIManager.put("Button.foreground", Color.WHITE);
+		UIManager.put("MenuBar.background", DonutFramework.Colors.Beige);
+		UIManager.put("MenuBar.foreground", Color.DARK_GRAY);
+
+		UIManager.put("TabbedPane.borderHightlightColor", Color.LIGHT_GRAY);
 
 		containerInput.add(inputPanel, new GridBagConstraints(0, 0, 1, 1, 1.0, 1.0, GridBagConstraints.CENTER,
 				GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
@@ -84,7 +91,9 @@ public class TopView extends JPanel implements Observer, ActionListener {
 	}
 
 	/**
-	 * @brief Leitet das update() Ereignis and die entsprechenden Komponenten weiter
+	 * <pre>
+	 * Leitet das update() Ereignis and die entsprechenden Komponenten weiter
+	 * </pre>
 	 */
 	public void update(Observable obs, Object obj) {
 		plotPanel.update(obs, obj);

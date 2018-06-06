@@ -92,7 +92,9 @@ public class PhasedArrayInputPanel extends JPanel
 	}
 
 	/**
-	 * @brief übergibt alle Werte des Panels in den Controller
+	 * <pre>
+	 * übergibt alle Werte des Panels in den Controller
+ 	 * </pre>
 	 */
 	public void valuesToController() {
 		trace.methodeCall();
@@ -113,7 +115,9 @@ public class PhasedArrayInputPanel extends JPanel
 	}
 
 	/**
-	 * @brief übernimmt die Werte aus dem Model und setzt sie aufs Userinterface
+	 * <pre>
+	 * übernimmt die Werte aus dem Model und setzt sie aufs Userinterface
+ 	 * </pre>
 	 * @param obs
 	 * @param obj
 	 */
@@ -128,7 +132,9 @@ public class PhasedArrayInputPanel extends JPanel
 	}
 
 	/**
-	 * @brief Handler für on/off Buttons
+	 * <pre>
+	 * Handler für on/off Buttons
+ 	 * </pre>
 	 */
 	@Override
 	public void itemStateChanged(ItemEvent e) {
@@ -147,7 +153,9 @@ public class PhasedArrayInputPanel extends JPanel
 	}
 
 	/**
-	 * @brief Handler für die JSlider
+	 * <pre>
+	 * Handler für die JSlider
+ 	 * </pre>
 	 */
 	@Override
 	public void stateChanged(ChangeEvent e) {
@@ -160,7 +168,9 @@ public class PhasedArrayInputPanel extends JPanel
 	}
 
 	/**
-	 * @brief Handler für KeyEvents in TextFields
+	 * <pre>
+	 * Handler für KeyEvents in TextFields
+ 	 * </pre>
 	 */
 	@Override
 	public void keyPressed(KeyEvent e) {
@@ -183,7 +193,9 @@ public class PhasedArrayInputPanel extends JPanel
 	}
 
 	/**
-	 * @brief Handler für Maus Scrollrad auf Slider und TextField
+	 * <pre>
+	 * Handler für Maus Scrollrad auf Slider und TextField
+ 	 * </pre>
 	 */
 	@Override
 	public void mouseWheelMoved(MouseWheelEvent e) {

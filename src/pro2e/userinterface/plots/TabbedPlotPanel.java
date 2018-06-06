@@ -15,8 +15,6 @@ import pro2e.matlabfunctions.MiniMatlab;
 import pro2e.model.Model;
 import pro2e.userinterface.MyBorderFactory;
 
-// import pro2e.teamX.model.Model;
-
 public class TabbedPlotPanel extends JPanel {
 	private static final long serialVersionUID = 1L;
 	private TraceV1 trace = new TraceV1(this);
@@ -38,8 +36,6 @@ public class TabbedPlotPanel extends JPanel {
 		tabpane.addTab("kartesisch", plotPanelKart);
 		tabpane.addTab("polar", plotPanelPol);
 
-		tabpane.setForeground(Color.WHITE);
-
 		add(tabpane);
 		setVisible(true);
 
@@ -58,7 +54,10 @@ public class TabbedPlotPanel extends JPanel {
 	}
 
 	/**
-	 * @brief Ruft die update() Methoden der darauf befindenden Plots Panels auf
+	 * <pre>
+	 * Ruft die update() Methoden der darauf befindenden Plots Panels auf
+	 * </pre>
+	 * 
 	 * @param obs
 	 * @param obj
 	 */
@@ -77,7 +76,9 @@ public class TabbedPlotPanel extends JPanel {
 	}
 
 	/**
-	 * @brief Setzt die Darstellung der darauf befindenden Plot Panels zurück
+	 * <pre>
+	 * Setzt die Darstellung der darauf befindenden Plot Panels zurück
+	 * </pre>
 	 */
 	public void resetAxis(boolean plotAxisDb) {
 		trace.methodeCall();

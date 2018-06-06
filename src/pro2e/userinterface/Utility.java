@@ -21,7 +21,9 @@ public class Utility {
 	// }
 
 	/**
-	 * @note Funktioniert tatsächlich
+	 * <pre>
+	 * holt einen Text aus einer Datei im Resource Ordner, funktioniert auch, wenn als jar gepackt
+ 	 * </pre>
 	 * @param datei
 	 * @return
 	 */
@@ -45,7 +47,9 @@ public class Utility {
 	}
 
 	/**
-	 * @brief gibt die absolute URL zu einem File auf dem System zurück
+	 * <pre>
+	 * gibt die absolute URL zu einem File auf dem System zurück
+ 	 * </pre>
 	 * @param datei
 	 * @return
 	 */

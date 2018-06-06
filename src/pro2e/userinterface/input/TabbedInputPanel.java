@@ -1,6 +1,5 @@
 package pro2e.userinterface.input;
 
-import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.GridBagConstraints;
@@ -79,17 +78,19 @@ public class TabbedInputPanel extends JPanel {
 
 		tabpane.addTab("Antennen", panelAntennas);
 		tabpane.addTab("Nebenkeulen", panelAdvanced);
-		tabpane.setForeground(Color.WHITE);
 		add(tabpane);
 		setVisible(true);
 
 	}
 
 	/**
-	 * @brief Delegiert den Befehl, die Werte in den Controller zu speichern weiter
-	 * @note nach dem ersten valuesToController werden unter Umständen die Werte in
-	 *       der nachfolgenden Kompenente wider vergessen weil in der Zwischenzeit
-	 *       ein update() ausgelöst wurde
+	 * <pre>
+	 *  
+	 * Delegiert den Befehl, die Werte in den Controller zu speichern weiter
+	 * nach dem ersten valuesToController werden unter Umständen die Werte in
+	 * der nachfolgenden Kompenente wider vergessen weil in der Zwischenzeit
+	 * ein update() ausgelöst wurde
+	 * </pre>
 	 */
 	public void valuesToController() {
 		trace.methodeCall();
@@ -104,8 +105,11 @@ public class TabbedInputPanel extends JPanel {
 	}
 
 	/**
-	 * @brief delegiert den update Befehl and die darauf befindenden Komponente
-	 *        weiter
+	 * <pre>
+	 *  
+	 * delegiert den update Befehl and die darauf befindenden Komponente weiter
+	 * </pre>
+	 * 
 	 * @param obs
 	 * @param obj
 	 */

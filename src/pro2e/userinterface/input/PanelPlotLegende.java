@@ -20,8 +20,6 @@ public class PanelPlotLegende extends JPanel {
 	public PanelPlotLegende() {
 		super(new GridBagLayout());
 		trace.constructorCall();
-		// setPreferredSize(new Dimension(DPIFixV3.screen.width / 4,
-		// DPIFixV3.screen.height / 2));
 		setBorder(MyBorderFactory.createMyBorder(""));
 
 		JLabel lbGray = new JLabel("grau");
@@ -29,7 +27,7 @@ public class PanelPlotLegende extends JPanel {
 		JLabel lbBlack = new JLabel("schwarz");
 		lbBlack.setForeground(Color.BLACK);
 		JLabel lbBlue = new JLabel("rot");
-		lbBlue.setForeground(DonutFramework.Colors.DonutPink);
+		lbBlue.setForeground(DonutFramework.Colors.Pink);
 
 		add(lbGray, new GridBagConstraints(0, 0, 1, 1, 0.0, 0.0, GridBagConstraints.WEST, GridBagConstraints.HORIZONTAL,
 				new Insets(5, 5, 5, 5), 0, 0));

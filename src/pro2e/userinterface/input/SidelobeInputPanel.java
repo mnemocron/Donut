@@ -12,7 +12,6 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseWheelEvent;
 import java.awt.event.MouseWheelListener;
-//import java.util.Hashtable;
 import java.util.Observable;
 
 import javax.swing.ButtonGroup;
@@ -63,8 +62,6 @@ public class SidelobeInputPanel extends JPanel
 		super(new GridBagLayout());
 		trace.constructorCall();
 		this.controller = controller;
-		// setPreferredSize(new Dimension(DPIFixV3.screen.width / 4,
-		// DPIFixV3.screen.height / 2));
 		setBorder(MyBorderFactory.createMyBorder(" Nebenkeulen "));
 
 		/* Fensterfunktionen */
@@ -182,7 +179,9 @@ public class SidelobeInputPanel extends JPanel
 	}
 
 	/**
-	 * @brief übergibt alle Werte des Panels in den Controller
+	 * <pre>
+	 * übergibt alle Werte des Panels in den Controller
+ 	 * </pre>
 	 */
 	public void valuesToController() {
 		trace.methodeCall();
@@ -313,7 +312,9 @@ public class SidelobeInputPanel extends JPanel
 	}
 
 	/**
-	 * @brief übernimmt die Werte aus dem Model und setzt sie aufs Userinterface
+	 * <pre>
+	 * übernimmt die Werte aus dem Model und setzt sie aufs Userinterface
+ 	 * </pre>
 	 * @param obs
 	 * @param obj
 	 */
@@ -332,7 +333,9 @@ public class SidelobeInputPanel extends JPanel
 	}
 
 	/**
-	 * @brief Handler für KeyEvents in TextFields
+	 * <pre>
+	 * Handler für KeyEvents in TextFields
+ 	 * </pre>
 	 */
 	@Override
 	public void keyPressed(KeyEvent e) {
@@ -355,7 +358,9 @@ public class SidelobeInputPanel extends JPanel
 	}
 
 	/**
-	 * @brief Handler für die JSlider
+	 * <pre>
+	 * Handler für die JSlider
+ 	 * </pre>
 	 */
 	@Override
 	public void stateChanged(ChangeEvent e) {
@@ -377,7 +382,9 @@ public class SidelobeInputPanel extends JPanel
 	}
 
 	/**
-	 * @brief Handler für on/off Buttons
+	 * <pre>
+	 * Handler für on/off Buttons
+ 	 * </pre>
 	 */
 	@Override
 	public void itemStateChanged(ItemEvent e) {

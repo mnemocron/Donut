@@ -18,6 +18,7 @@ import org.jfree.chart.renderer.DefaultPolarItemRenderer;
 import org.jfree.data.xy.XYSeries;
 import org.jfree.data.xy.XYSeriesCollection;
 
+import pro2e.DonutFramework;
 import pro2e.TraceV1;
 import pro2e.matlabfunctions.MiniMatlab;
 import pro2e.model.Model;
@@ -30,8 +31,6 @@ public class PlotPanelPol extends JPanel {
 	public PlotPanelPol() {
 		super(new GridBagLayout());
 		trace.constructorCall();
-		// setPreferredSize(new Dimension(DPIFixV3.screen.width / 3,
-		// DPIFixV3.screen.height / 2));
 
 		chart = ChartFactory.createPolarChart("Strahlungsdiagramm", null, false, false, false);
 
@@ -47,25 +46,18 @@ public class PlotPanelPol extends JPanel {
 		polplot.setAngleGridlinePaint(Color.GRAY);
 		polplot.setRadiusGridlinePaint(Color.GRAY);
 		chart.setBackgroundPaint(Color.WHITE);
-		// chart.setBackgroundPaint(this.getBackground());
 
 		ValueAxis rAxis = polplot.getAxis(0);
-		rAxis.setRange(-60.0, 0.0);
+		rAxis.setRange(-40.0, 0.0);
 		rAxis.setAutoRange(false);
 		rAxis.setTickLabelsVisible(true);
 		rAxis.setLabel("Intensität dB");
 
 		DefaultPolarItemRenderer renderer = (DefaultPolarItemRenderer) polplot.getRenderer();
-		renderer.setSeriesStroke(0, new BasicStroke(2f));
-		renderer.setSeriesPaint(0, Color.darkGray);
+		renderer.setSeriesStroke(0, new BasicStroke(3f));
+		renderer.setSeriesPaint(0, DonutFramework.Colors.Blue);
 		renderer.setShapesVisible(false);
 		polplot.setRenderer(0, renderer);
-
-		renderer = new DefaultPolarItemRenderer();
-		renderer.setSeriesStroke(1, new BasicStroke(2f, BasicStroke.CAP_BUTT, BasicStroke.JOIN_BEVEL));
-		renderer.setSeriesPaint(0, Color.GRAY);
-		renderer.setShapesVisible(false);
-		polplot.setRenderer(1, renderer);
 
 		polplot.setAngleOffset(180);
 
@@ -74,14 +66,16 @@ public class PlotPanelPol extends JPanel {
 	}
 
 	/**
-	 * @brief setzt die Darstellung (zoom) auf den Ursprungszustand zurück
+	 * <pre>
+	 * setzt die Darstellung (zoom) auf den Ursprungszustand zurück
+	 * </pre>
 	 */
 	public void resetAxis(boolean plotScaleDb) {
 		trace.methodeCall();
 		PolarPlot polplot = (PolarPlot) chart.getPlot();
 		ValueAxis rAxis = polplot.getAxis(0);
 		if (plotScaleDb) {
-			rAxis.setRange(-60.0, 0.0);
+			rAxis.setRange(-40.0, 0.0);
 			rAxis.setLabel("Intensität dB");
 		} else {
 			rAxis.setRange(0.0, 1.0);
@@ -91,7 +85,10 @@ public class PlotPanelPol extends JPanel {
 	}
 
 	/**
-	 * @brief setzt die Daten für den Plot y1 = f(x)
+	 * <pre>
+	 * setzt die Daten für den Plot y1 = f(x)
+	 * </pre>
+	 * 
 	 * @param x
 	 * @param y1
 	 */
@@ -112,19 +109,14 @@ public class PlotPanelPol extends JPanel {
 		dataset.addSeries(series);
 		((PolarPlot) chart.getPlot()).setDataset(0, dataset);
 
-		series = new XYSeries("Plot2");
-		for (int i = 0; i < x.length; i++) {
-			// series.add(x[i], -13.0);
-		}
-		dataset = new XYSeriesCollection();
-		dataset.addSeries(series);
-		((PolarPlot) chart.getPlot()).setDataset(1, dataset);
-
 		repaint();
 	}
 
 	/**
-	 * @brief holt die Daten aus dem Model und setzt sie in den Plot
+	 * <pre>
+	 * holt die Daten aus dem Model und setzt sie in den Plot
+	 * </pre>
+	 * 
 	 * @param obs
 	 * @param obj
 	 */

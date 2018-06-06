@@ -35,8 +35,10 @@ public class Controller {
 	}
 
 	/**
-	 * @brief überprüft die Parameter für die gegebene Fensterfunktion und setzt
-	 *        beide Attribute ins Model
+	 * <pre>
+	 * überprüft die Parameter für die gegebene Fensterfunktion und setzt
+	 * beide Attribute ins Model
+	 * </pre>
 	 * @param window
 	 * @param windowParam
 	 */
@@ -58,9 +60,11 @@ public class Controller {
 	}
 
 	/**
-	 * @brief überprüft die Parameter auf ungültige Werte und setzt alle Attribute
-	 *        ins Model. Anzahl Antennen muss zwischen 1 und 100 liegen. Verhältnis
-	 *        d/Lamda muss zwischen 0 und 10 sein
+	 * <pre>
+	 * überprüft die Parameter auf ungültige Werte und setzt alle Attribute
+	 * ins Model. Anzahl Antennen muss zwischen 1 und 100 liegen. Verhältnis
+	 * d/Lamda muss zwischen 0 und 10 sein
+	 * </pre>
 	 * @param dLam
 	 * @param nAnt
 	 * @param type
@@ -98,8 +102,10 @@ public class Controller {
 	}
 
 	/**
-	 * @brief überprüft ob phase innerhalb von 0 bis 180 Grad liegt und setzt das
-	 *        Attribut im Model
+	 * <pre>
+	 * überprüft ob phase innerhalb von 0 bis 180 Grad liegt und setzt das
+	 * Attribut im Model
+	 * </pre>
 	 * @param phase
 	 */
 	public void setPhase(double phase) {

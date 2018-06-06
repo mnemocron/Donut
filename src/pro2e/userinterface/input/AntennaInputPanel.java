@@ -33,8 +33,6 @@ public class AntennaInputPanel extends JPanel implements ActionListener, ItemLis
 	private Controller controller;
 	private JDoubleTextField tfDLam = new JDoubleTextField("0.5", 1, false);
 	private JDoubleTextField tfNAnt = new JDoubleTextField("8", 1, false);
-	// private String antennaTypeListe[] = { "Dipol Zeile", "Lambert", "hertzscher
-	// Dipol Linie", "λ/2 Dipol Linie" };
 	private String antennaTypeListe[] = { "Dipol Zeile", "hertzscher Dipol Linie", "λ/2 Dipol Linie" };
 	private JComboBox<Object> selectAntennaType = new JComboBox<Object>(antennaTypeListe);
 
@@ -163,7 +161,9 @@ public class AntennaInputPanel extends JPanel implements ActionListener, ItemLis
 	}
 
 	/**
-	 * @brief übergibt alle Werte des Panels in den Controller
+	 * <pre>
+	 * übergibt alle Werte des Panels in den Controller
+ 	 * </pre>
 	 */
 	public void valuesToController() {
 		trace.methodeCall();
@@ -195,7 +195,9 @@ public class AntennaInputPanel extends JPanel implements ActionListener, ItemLis
 	}
 
 	/**
-	 * @brief übernimmt die Werte aus dem Model und setzt sie aufs Userinterface
+	 * <pre>
+	 * übernimmt die Werte aus dem Model und setzt sie aufs Userinterface
+ 	 * </pre>
 	 * @param obs
 	 * @param obj
 	 */
@@ -225,8 +227,6 @@ public class AntennaInputPanel extends JPanel implements ActionListener, ItemLis
 		switch (type) {
 		case 0:
 			return Antenna.ISOTROP;
-		// case 1:
-		// return Antenna.LAMBERT;
 		case 1:
 			return Antenna.HERTZDIPOL;
 		case 2:
@@ -244,7 +244,9 @@ public class AntennaInputPanel extends JPanel implements ActionListener, ItemLis
 	}
 
 	/**
-	 * @brief Handler für on/off Buttons
+	 * <pre>
+	 * Handler für on/off Buttons
+ 	 * </pre>
 	 */
 	@Override
 	public void itemStateChanged(ItemEvent e) {

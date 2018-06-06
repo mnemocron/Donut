@@ -23,7 +23,9 @@ public class LinearAntennaArray {
 	private boolean plotScaleDb = true;
 
 	/**
-	 * @brief berechnet den 3db Öffnungswinkel
+	 * <pre>
+	 *  berechnet den 3db Öffnungswinkel
+ 	 * </pre>
 	 * @return
 	 */
 	public double get3dbAngle() {
@@ -59,8 +61,10 @@ public class LinearAntennaArray {
 	}
 
 	/**
-	 * @brief berechnet die 2D Abstrahlcharakteristik von 0 bis 360° mit den
-	 *        gegebenen Attributen mit und ohne Reflektor
+	 * <pre>
+	 * berechnet die 2D Abstrahlcharakteristik von 0 bis 360° mit den
+	 * gegebenen Attributen mit und ohne Reflektor
+ 	 * </pre>
 	 * @return
 	 */
 	public double[] getLinearPhasedArrayPlot() {

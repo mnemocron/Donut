@@ -99,7 +99,9 @@ public class AntennaPicturePanel extends JPanel {
 	}
 
 	/**
-	 * @brief setzt das passende Bild zu der ausgewählten Antennengeometrie
+	 * <pre>
+	 * setzt das passende Bild zu der ausgewählten Antennengeometrie
+ 	 * </pre>
 	 * @param obs
 	 * @param obj
 	 */
