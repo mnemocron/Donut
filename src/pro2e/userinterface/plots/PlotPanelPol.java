@@ -79,7 +79,7 @@ public class PlotPanelPol extends JPanel {
 			rAxis.setLabel("Intensität dB");
 		} else {
 			rAxis.setRange(0.0, 1.0);
-			rAxis.setLabel("Intensität normiert");
+			rAxis.setLabel("Intensität linear");
 		}
 		rAxis.setAutoRange(false);
 	}

@@ -26,7 +26,8 @@ public class LinearAntennaArray {
 	/**
 	 * <pre>
 	 *  berechnet den 3db Öffnungswinkel
- 	 * </pre>
+	 * </pre>
+	 * 
 	 * @return
 	 */
 	public double get3dbAngle() {
@@ -65,7 +66,8 @@ public class LinearAntennaArray {
 	 * <pre>
 	 * berechnet die 2D Abstrahlcharakteristik von 0 bis 360° mit den
 	 * gegebenen Attributen mit und ohne Reflektor
- 	 * </pre>
+	 * </pre>
+	 * 
 	 * @return
 	 */
 	public double[] getLinearPhasedArrayPlot() {
@@ -127,16 +129,13 @@ public class LinearAntennaArray {
 							// s=s+C.*exp(-j*dL*2*pi.*cos(phi_r).*(k-1)) +
 							// C.*exp(-j.*((2*dR+dL*(k-1))*2*pi.*cos(phi_r)+dL*2*pi.*cos(phi_r).*(k-1)+pi));
 							phi = -(dLam * 2 * Math.PI * Math.cos(psi_r[ii]) * (k) + pk[k]);
-							if(this.antenne.getAbstrahlung() == Antenna.ISOTROP) {
-								phi += Math.PI;
-							}
 							addend = new Complex(Math.cos(phi), Math.sin(phi));
 							addend = addend.multiply(ak[k]).multiply(amplitude[ii]);
 							s[ii] = s[ii].add(addend);
 							phi = -(((2 * dLamReflektor + dLam * (k)) * 2 * Math.PI * Math.cos(psi_r[ii])
-									+ dLam * 2 * Math.PI * Math.cos(psi_r[ii]) * (k)) + pk[k]);
-							if(this.antenne.getAbstrahlung() == Antenna.ISOTROP) {
-								phi += Math.PI;
+									+ dLam * 2 * Math.PI * Math.cos(psi_r[ii]) * (k) + pk[k] + Math.PI));
+							if (this.antenne.getAbstrahlung() != Antenna.ISOTROP) {
+								phi -= Math.PI;
 							}
 							addend = new Complex(Math.cos(phi), Math.sin(phi));
 							addend = addend.multiply(ak[k]).multiply(amplitude[ii]);

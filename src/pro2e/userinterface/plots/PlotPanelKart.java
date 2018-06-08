@@ -89,7 +89,7 @@ public class PlotPanelKart extends JPanel {
 			yAxis.setLabel("Intensität dB");
 		} else {
 			yAxis.setRange(0.0, 1.0);
-			yAxis.setLabel("Intensität normiert");
+			yAxis.setLabel("Intensität linear");
 		}
 		yAxis.setAutoRange(false);
 	}

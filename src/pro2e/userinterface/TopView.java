@@ -29,7 +29,7 @@ public class TopView extends JPanel implements Observer, ActionListener {
 	private PlotPanelAmplituden plotAmplituden = new PlotPanelAmplituden();
 	private AntennaPicturePanel picturePanel = new AntennaPicturePanel();
 	private JButton btReset = new JButton("Reset Plot-Achsen");
-	private JButton btScale = new JButton("normierte Skala");
+	private JButton btScale = new JButton("lineare Skala");
 	private JLabel lb3db = new JLabel("0");
 
 	private JPanel containerPlots = new JPanel(new GridBagLayout());
@@ -116,7 +116,7 @@ public class TopView extends JPanel implements Observer, ActionListener {
 			if (e.getSource() == btScale) {
 				plotScaleDb = !plotScaleDb;
 				if (plotScaleDb) {
-					btScale.setText("normierte Skala     ");
+					btScale.setText("lineare Skala     ");
 				} else {
 					btScale.setText("logarithmische Skala");
 				}
