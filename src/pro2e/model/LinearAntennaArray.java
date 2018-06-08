@@ -127,6 +127,9 @@ public class LinearAntennaArray {
 							// s=s+C.*exp(-j*dL*2*pi.*cos(phi_r).*(k-1)) +
 							// C.*exp(-j.*((2*dR+dL*(k-1))*2*pi.*cos(phi_r)+dL*2*pi.*cos(phi_r).*(k-1)+pi));
 							phi = -(dLam * 2 * Math.PI * Math.cos(psi_r[ii]) * (k) + pk[k]);
+							if(this.antenne.getAbstrahlung() == Antenna.ISOTROP) {
+								phi += Math.PI;
+							}
 							addend = new Complex(Math.cos(phi), Math.sin(phi));
 							addend = addend.multiply(ak[k]).multiply(amplitude[ii]);
 							s[ii] = s[ii].add(addend);
