@@ -39,8 +39,12 @@ public class Controller {
 	 * überprüft die Parameter für die gegebene Fensterfunktion und setzt
 	 * beide Attribute ins Model
 	 * </pre>
+	 * 
 	 * @param window
+	 *            Fensterfunktionstyp
 	 * @param windowParam
+	 *            Parameter für die Fensterfunktion (falls diese über einen solchen
+	 *            verfügt)
 	 */
 	public void setWindowParam(int window, double windowParam) {
 		trace.methodeCall();
@@ -65,12 +69,21 @@ public class Controller {
 	 * ins Model. Anzahl Antennen muss zwischen 1 und 100 liegen. Verhältnis
 	 * d/Lamda muss zwischen 0 und 10 sein
 	 * </pre>
+	 * 
+	 * @param geo
+	 *            Die Geometrie des Arrays [circular|linear]
 	 * @param dLam
+	 *            Abstand der Strahler
 	 * @param nAnt
+	 *            Anzahl Strahler
 	 * @param type
+	 *            Abstrahltyp eines Strahlers
 	 * @param reflektor
+	 *            ein oder aus
 	 * @param dLamRef
+	 *            Abstand des Reflektors
 	 * @param refPos
+	 *            Anordnung des Reflektors
 	 */
 	public void setAntenna(int geo, double dLam, int nAnt, int type, boolean reflektor, double dLamRef, int refPos) {
 		trace.methodeCall();
@@ -106,7 +119,9 @@ public class Controller {
 	 * überprüft ob phase innerhalb von 0 bis 180 Grad liegt und setzt das
 	 * Attribut im Model
 	 * </pre>
+	 * 
 	 * @param phase
+	 *            Phasenwikel für das Phased Array
 	 */
 	public void setPhase(double phase) {
 		trace.methodeCall();

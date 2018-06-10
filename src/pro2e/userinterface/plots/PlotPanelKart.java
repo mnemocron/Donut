@@ -75,6 +75,9 @@ public class PlotPanelKart extends JPanel {
 	 * <pre>
 	 * setzt die Darstellung (zoom) auf den Ursprungszustand zurück
 	 * </pre>
+	 * 
+	 * @param plotScaleDb
+	 *            true wenn die logarithmische Skalierung verwendet werden soll
 	 */
 	public void resetAxis(boolean plotScaleDb) {
 		trace.methodeCall();

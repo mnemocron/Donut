@@ -57,7 +57,7 @@ public class Fensterfunktionen {
 	 *            array of normalized values (range: 0-1)
 	 * @param bits
 	 *            the number of bits
-	 * @return
+	 * @return Double array of the same size as val
 	 */
 	public static double[] Quantize(double[] val, int bits) {
 		double[] out = new double[val.length];
@@ -74,8 +74,10 @@ public class Fensterfunktionen {
 	 * </pre>
 	 * 
 	 * @param val
+	 *            The value to quantize
 	 * @param bits
-	 * @return
+	 *            number of bits in the bitrange
+	 * @return quantized value of val
 	 */
 	public static double Quantize(double val, int bits) {
 		int resolution = (int) Math.pow(2, bits);

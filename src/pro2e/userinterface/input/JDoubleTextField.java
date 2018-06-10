@@ -52,8 +52,9 @@ public class JDoubleTextField extends JTextField implements FocusListener, Mouse
 	}
 
 	/**
-	 * Returns true if the text field allows negative values (< 0.0)
-	 * 
+	 * <pre>
+	 * Returns true if the text field allows negative values (&lt; 0.0)
+	 * </pre>
 	 * @return boolean
 	 */
 	public boolean getAllowNegativeValues() {

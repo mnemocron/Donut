@@ -79,6 +79,9 @@ public class TabbedPlotPanel extends JPanel {
 	 * <pre>
 	 * Setzt die Darstellung der darauf befindenden Plot Panels zurück
 	 * </pre>
+	 * 
+	 * @param plotAxisDb
+	 *            true wenn die logarithmische Darstellung verwendet werden soll
 	 */
 	public void resetAxis(boolean plotAxisDb) {
 		trace.methodeCall();

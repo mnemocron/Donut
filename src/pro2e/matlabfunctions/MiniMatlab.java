@@ -62,6 +62,7 @@ public class MiniMatlab {
 	/**
 	 * <pre>
 	 * skaliert die Werte auf die logarithmische Skala
+	 * </pre>
 	 * 
 	 * @param a
 	 * @return
@@ -115,7 +116,7 @@ public class MiniMatlab {
 	 * gibt den Absolutwert der Zahl a zurück
 	 * </pre>
 	 * 
-	 * @param z
+	 * @param a
 	 * @return
 	 */
 	public static double abs(double a) {
@@ -130,7 +131,7 @@ public class MiniMatlab {
 	 * gibt Absolutwerte eines double Arrays zurück
 	 * </pre>
 	 * 
-	 * @param z
+	 * @param a
 	 * @return
 	 */
 	public static double[] abs(double[] a) {
@@ -388,7 +389,7 @@ public class MiniMatlab {
 
 	/**
 	 * <pre>
-	 * Berechnet Fakultät für grosse Zahlen (num > 19)
+	 * Berechnet Fakultät für grosse Zahlen (num &gt; 19)
 	 * </pre>
 	 * 
 	 * @param num
@@ -403,7 +404,7 @@ public class MiniMatlab {
 
 	/**
 	 * <pre>
-	 * Berechnet Fakultät für kleine Zahlen (num < 19)
+	 * Berechnet Fakultät für kleine Zahlen (num &lt; 19)
 	 * </pre>
 	 * 
 	 * @param num
