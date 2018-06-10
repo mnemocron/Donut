@@ -163,7 +163,7 @@ public class AntennaInputPanel extends JPanel implements ActionListener, ItemLis
 	/**
 	 * <pre>
 	 * übergibt alle Werte des Panels in den Controller
- 	 * </pre>
+	 * </pre>
 	 */
 	public void valuesToController() {
 		trace.methodeCall();
@@ -197,7 +197,8 @@ public class AntennaInputPanel extends JPanel implements ActionListener, ItemLis
 	/**
 	 * <pre>
 	 * übernimmt die Werte aus dem Model und setzt sie aufs Userinterface
- 	 * </pre>
+	 * </pre>
+	 * 
 	 * @param obs
 	 * @param obj
 	 */
@@ -215,6 +216,7 @@ public class AntennaInputPanel extends JPanel implements ActionListener, ItemLis
 		lbReflektor.setVisible(show);
 		lbRefAbstand.setVisible(show);
 		lbPosition.setVisible(show);
+		pnReflect.setVisible(show);
 		if (show) {
 			lbAntAbstand.setText("Antennenabstand d/λ");
 		} else {
@@ -246,7 +248,7 @@ public class AntennaInputPanel extends JPanel implements ActionListener, ItemLis
 	/**
 	 * <pre>
 	 * Handler für on/off Buttons
- 	 * </pre>
+	 * </pre>
 	 */
 	@Override
 	public void itemStateChanged(ItemEvent e) {
